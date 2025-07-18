@@ -1,0 +1,199 @@
+:root {
+  --primary-bg: linear-gradient(120deg, #0f172a, #1e293b);
+  --accent: #38bdf8;
+  --text-light: #f1f5f9;
+  --text-dark: #0f172a;
+  --neon: hsl(180, 100%, 50%);
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--primary-bg);
+  color: var(--text-light);
+  scroll-behavior: smooth;
+  transition: background 0.5s ease, color 0.5s ease;
+  text-align: center;
+}
+
+body.light-mode {
+  background: #f0f0f0;
+  color: var(--text-dark);
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 200px;
+  background: #1e293b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.sidebar h1 {
+  color: var(--accent);
+  margin-bottom: 2rem;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 1rem 0;
+}
+
+.nav-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--neon);
+  text-shadow: 0 0 5px var(--neon);
+}
+
+#themeToggle {
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: var(--accent);
+  color: var(--text-dark);
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+main {
+  margin-left: 200px;
+  padding: 2rem;
+}
+
+.section {
+  margin-bottom: 5rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.section.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero h2 {
+  color: var(--accent);
+  font-size: 2.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.project-card {
+  background: #1e293b;
+  padding: 1rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.project-card a {
+  color: var(--neon);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.skills .bar {
+  margin: 1rem 0;
+  height: 20px;
+  background: #374151;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills .bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: var(--accent);
+  animation: fillBar 2s ease forwards;
+}
+
+.skills .html::after {
+  width: 90%;
+}
+.skills .css::after {
+  width: 85%;
+}
+.skills .js::after {
+  width: 75%;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+#scrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: var(--text-dark);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  main {
+    margin-left: 0;
+  }
+}
+@media (max-width: 480px) {
+  .sidebar h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+
+  #themeToggle {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
