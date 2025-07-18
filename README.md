@@ -42,7 +42,7 @@ To run this project locally:
 
 1. Clone the repository  
    ```bash
-   git clone https://github.com/yourusername/portfolio-website.git
+   git clone https://github.com/DevyaniTondre/portfolio-website.git
 
 🙋‍♀️ About Me
 Hi, I'm Devyani Tondre – a frontend developer passionate about building clean and responsive websites.
